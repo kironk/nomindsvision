@@ -1,0 +1,34 @@
+# Quandl Configuration
+# Get the quandl api key from https://www.quandl.com/account/api
+quandl_api_key = r'your quandl api key goes here'
+
+# Logging Configuration
+log_config = {
+    'version': 1,
+    'formatters': {
+        'default': {
+            'format': '[%(asctime)s][%(levelname)s][%(module)s.%(funcName)s] '
+                      '%(message)s'
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'level': 'DEBUG',
+            'formatter': 'default'
+        },
+        'file': {
+            'class': 'logging.FileHandler',
+            'level': 'DEBUG',
+            'formatter': 'default',
+            'filename': 'console.log',
+            'mode': 'w'
+        }
+    },
+    'loggers': {
+        'main': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG'
+        }
+    }
+}
